@@ -1,0 +1,103 @@
+<div class="results-wrapper">
+  <mat-card appearance="outlined">
+    <mat-card-header class="center-header">
+      <mat-card-title>Results</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="game-one column">First Game</div>
+        <div class="game-two column">Second Game</div>
+        <div class="game-dealers column">Dealers</div>
+
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="results-container">
+      <!-- Left Column -->
+      <div class="left column">
+        <div *ngFor="let num of gameOneResults; let i = index">
+          <div class="row">
+            <div class="column">
+              {{ num }}
+            </div>
+            <div class="first column">
+              <mat-form-field class="small" appearance="fill">
+                <input type="text" matInput [formControl]="gameOneControls[i]" [matAutocomplete]="auto1">
+                <mat-autocomplete #auto1="matAutocomplete">
+                  <mat-option *ngFor="let name of filteredNames1[i] | async" [value]="name">
+                    {{ name }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Column -->
+      <div class="center column">
+        <div *ngFor="let num of gameTwoResults; let i = index">
+          <div class="row">
+            <div class="column">
+              {{ num }}
+            </div>
+            <div class="first column">
+              <mat-form-field class="small" appearance="fill">
+                <input type="text" matInput [formControl]="gameTwoControls[i]" [matAutocomplete]="auto2">
+                <mat-autocomplete #auto2="matAutocomplete">
+                  <mat-option *ngFor="let name of filteredNames2[i] | async" [value]="name">
+                    {{ name }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right column">
+        <div class="row">
+          <mat-form-field class="small" appearance="fill">
+            <input type="text" matInput [formControl]="dealerControl1" [matAutocomplete]="autoDealer1">
+            <mat-autocomplete #autoDealer1="matAutocomplete">
+              <mat-option *ngFor="let name of filteredDealers1 | async" [value]="name">
+                {{ name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="small" appearance="fill">
+            <input type="text" matInput [formControl]="dealerControl2" [matAutocomplete]="autoDealer2">
+            <mat-autocomplete #autoDealer2="matAutocomplete">
+              <mat-option *ngFor="let name of filteredDealers2 | async" [value]="name">
+                {{ name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="small" appearance="fill">
+            <input type="text" matInput [formControl]="dealerControl3" [matAutocomplete]="autoDealer3">
+            <mat-autocomplete #autoDealer3="matAutocomplete">
+              <mat-option *ngFor="let name of filteredDealers3 | async" [value]="name">
+                {{ name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="small" appearance="fill">
+            <input type="text" matInput [formControl]="dealerControl4" [matAutocomplete]="autoDealer4">
+            <mat-autocomplete #autoDealer4="matAutocomplete">
+              <mat-option *ngFor="let name of filteredDealers4 | async" [value]="name">
+                {{ name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,118 @@
+mat-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+mat-divider {
+  margin: 16px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.game-one,
+.game-two,
+.game-dealers {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 8px 0;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.left,
+.center,
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.left .row,
+.center .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.left .column,
+.center .column {
+  min-width: 35px;
+  text-align: right;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  padding-right: 8px;
+}
+
+.right .row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.results-wrapper {
+  display: block;
+  padding-bottom: 120px;
+}
+
+mat-form-field.small {
+  width: 100%;
+}
+
+mat-form-field.small .mat-mdc-text-field-wrapper {
+  padding-bottom: 0;
+}
+
+mat-form-field.small .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+@media print {
+  button {
+    display: none !important;
+  }
+  
+  app-results {
+    page-break-before: auto !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  mat-card {
+    box-shadow: none !important;
+    border: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  mat-divider {
+    display: none !important;
+  }
+  
+  .results-container {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  
+  .left,
+  .center,
+  .right {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}

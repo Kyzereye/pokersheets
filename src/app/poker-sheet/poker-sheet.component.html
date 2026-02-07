@@ -1,0 +1,60 @@
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <div class="row">
+      <div class="game-left column">First Game</div>
+      <div class="game-center column">First Game</div>
+      <div class="game-right column">Second Game</div>
+    </div>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <div class="columns-container">
+    <!-- Column 1: First Game Rows 1-20 -->
+    <div class="column-container">
+      <div *ngFor="let num of firstGameNumbers; let i = index" class="row-item">
+        <div class="row-number">{{ num }}</div>
+        <mat-form-field class="small" appearance="fill">
+          <input type="text" matInput [formControl]="column1Controls[i]"
+            [matAutocomplete]="auto1">
+          <mat-autocomplete #auto1="matAutocomplete">
+            <mat-option *ngFor="let name of filteredNames1[i] | async" [value]="name">
+              {{ name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </div>
+    
+    <!-- Column 2: Second Game Rows 21-40 -->
+    <div class="column-container">
+      <div *ngFor="let num of secondGameNumbers; let i = index" class="row-item">
+        <div class="row-number">{{ num }}</div>
+        <mat-form-field class="small" appearance="fill">
+          <input type="text" matInput [formControl]="column2Controls[i]"
+            [matAutocomplete]="auto2">
+          <mat-autocomplete #auto2="matAutocomplete">
+            <mat-option *ngFor="let name of filteredNames2[i] | async" [value]="name">
+              {{ name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </div>
+    
+    <!-- Column 3: Second Game Rows 1-20 -->
+    <div class="column-container">
+      <div *ngFor="let num of firstGameNumbers; let i = index" class="row-item">
+        <div class="row-number">{{ num }}</div>
+        <mat-form-field class="small" appearance="fill">
+          <input type="text" matInput [formControl]="column3Controls[i]"
+            [matAutocomplete]="auto3">
+          <mat-autocomplete #auto3="matAutocomplete">
+            <mat-option *ngFor="let name of filteredNames3[i] | async" [value]="name">
+              {{ name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</mat-card>
+

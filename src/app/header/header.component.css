@@ -1,0 +1,73 @@
+mat-card {
+  margin: 20px;
+  padding: 20px;
+}
+
+mat-divider {
+  margin: 16px 0;
+}
+
+.center-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.center-header {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex: 0 0 auto;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-form-field {
+  min-width: 200px;
+}
+
+mat-form-field.small {
+  min-width: 150px;
+  width: auto;
+}
+
+mat-form-field.small .mat-mdc-text-field-wrapper {
+  padding-bottom: 0;
+}
+
+mat-form-field.small .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+@media print {
+  mat-card {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  mat-divider {
+    display: none !important;
+  }
+}

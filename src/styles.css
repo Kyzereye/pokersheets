@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  min-height: 100%;
+}
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-form-field.small {
+  --mat-form-field-container-height: 10px;
+  --mat-form-field-container-vertical-padding: 1px;
+  --mdc-filled-text-field-container-color: transparent;
+  --mat-form-field-container-text-size: 1rem;
+}
+
+.mat-mdc-form-field-bottom-align {
+  height: 0px;
+}
