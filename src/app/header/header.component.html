@@ -1,32 +1,21 @@
 <div class="center-card">
-  <mat-card appearance="outlined" style="width: 100%;">
+  <mat-card appearance="outlined">
     <mat-card-header class="center-header">
       <mat-card-title>Rocky Mountain Poker Venues - POKER SIGN IN SHEET</mat-card-title>
     </mat-card-header>
     <mat-divider></mat-divider>
-    <mat-card-content>
-      <div class="row">
-        <div class="column left">
-          <span style="margin-right: 8px;">Venue:</span>
-          <mat-form-field class="small" appearance="fill">
-            <input type="text" matInput [formControl]="venueControl" [matAutocomplete]="autoVenue">
-            <mat-autocomplete #autoVenue="matAutocomplete">
-              <mat-option *ngFor="let venue of filteredVenues | async" [value]="venue">
-                {{ venue }}
-              </mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
-        </div>
-        <div class="column right">
-          Date: 
-          <mat-form-field class="small" >
-            <!-- <mat-label>Choose a date</mat-label> -->
-            <input matInput [matDatepicker]="picker">
-            <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-        </div>
+    <mat-card-content class="header-fields">
+      <div class="header-field">
+        <span>Venue:</span>
+        <app-autocomplete-field [control]="venueControl" [options]="venues"></app-autocomplete-field>
+      </div>
+      <div class="header-field header-field--right">
+        <span>Date:</span>
+        <mat-form-field class="small" appearance="fill">
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
       </div>
     </mat-card-content>
   </mat-card>

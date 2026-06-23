@@ -1,0 +1,11 @@
+<div class="field-row">
+  <span *ngIf="number !== undefined" class="field-number">{{ number }}</span>
+  <mat-form-field class="small" appearance="fill">
+    <input type="text" matInput [formControl]="control" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
