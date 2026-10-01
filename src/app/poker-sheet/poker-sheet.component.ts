@@ -1,4 +1,3 @@
-import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -9,7 +8,7 @@ import { PokerDataService } from '../shared/poker-data.service';
 @Component({
   selector: 'app-poker-sheet',
   standalone: true,
-  imports: [NgFor, MatCardModule, MatDividerModule, AutocompleteFieldComponent],
+  imports: [MatCardModule, MatDividerModule, AutocompleteFieldComponent],
   templateUrl: './poker-sheet.component.html',
   styleUrl: './poker-sheet.component.css',
 })

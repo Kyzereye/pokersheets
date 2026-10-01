@@ -10,27 +10,19 @@
   <mat-divider></mat-divider>
   <div class="columns">
     <div class="column">
-      <app-autocomplete-field
-        *ngFor="let num of gameOne; let i = index"
-        [number]="num"
-        [control]="data.gameOne[i]"
-        [options]="names">
-      </app-autocomplete-field>
+      @for (num of gameOne; track $index; let i = $index) {
+        <app-autocomplete-field [number]="num" [control]="data.gameOne[i]" [options]="names"></app-autocomplete-field>
+      }
     </div>
     <div class="column">
-      <app-autocomplete-field
-        *ngFor="let num of gameTwo; let i = index"
-        [number]="num"
-        [control]="data.gameTwo[i]"
-        [options]="names">
-      </app-autocomplete-field>
+      @for (num of gameTwo; track $index; let i = $index) {
+        <app-autocomplete-field [number]="num" [control]="data.gameTwo[i]" [options]="names"></app-autocomplete-field>
+      }
     </div>
     <div class="column">
-      <app-autocomplete-field
-        *ngFor="let control of data.dealers; let i = index"
-        [control]="control"
-        [options]="dealers">
-      </app-autocomplete-field>
+      @for (control of data.dealers; track $index) {
+        <app-autocomplete-field [control]="control" [options]="dealers"></app-autocomplete-field>
+      }
     </div>
   </div>
 </mat-card>

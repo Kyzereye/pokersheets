@@ -1,10 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { 
+html, body {
   min-height: 100%;
 }
-body { 
-  margin: 0; 
+
+body {
+  margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -17,4 +16,37 @@ mat-form-field.small {
 
 .mat-mdc-form-field-bottom-align {
   height: 0px;
+}
+
+/* Card title + three-column layout shared by the header, sign-in sheet and results */
+.center-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.column-headers {
+  display: flex;
+  gap: 24px;
+}
+
+.column-headers span {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.columns {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }

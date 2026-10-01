@@ -3,14 +3,14 @@
 Scrape player names from the Poker Leaderboard on rockymountainpokervenues.com.
 Finds the table under "Poker Leaderboard" (tbody tr.lbMainRow app-player-profile-link),
 extracts the link text (name) from each row, and paginates through all pages.
-Outputs a TypeScript array to src/app/shared/updated names.ts
+Overwrites src/app/shared/names.data.ts; review the result with `git diff`.
 """
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
 URL = "https://rockymountainpokervenues.com/"
-OUTPUT_PATH = Path(__file__).resolve().parent.parent / "src" / "app" / "shared" / "updated names.ts"
+OUTPUT_PATH = Path(__file__).resolve().parent.parent / "src" / "app" / "shared" / "names.data.ts"
 
 # Leaderboard is in iframe; selectors for the table and pagination
 ROW_LINKS = "tr.lbMainRow app-player-profile-link a"

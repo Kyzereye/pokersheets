@@ -7,28 +7,19 @@
   <mat-divider></mat-divider>
   <div class="columns">
     <div class="column">
-      <app-autocomplete-field
-        *ngFor="let num of firstGame; let i = index"
-        [number]="num"
-        [control]="data.column1[i]"
-        [options]="names">
-      </app-autocomplete-field>
+      @for (num of firstGame; track $index; let i = $index) {
+        <app-autocomplete-field [number]="num" [control]="data.column1[i]" [options]="names"></app-autocomplete-field>
+      }
     </div>
     <div class="column">
-      <app-autocomplete-field
-        *ngFor="let num of secondGame; let i = index"
-        [number]="num"
-        [control]="data.column2[i]"
-        [options]="names">
-      </app-autocomplete-field>
+      @for (num of secondGame; track $index; let i = $index) {
+        <app-autocomplete-field [number]="num" [control]="data.column2[i]" [options]="names"></app-autocomplete-field>
+      }
     </div>
     <div class="column">
-      <app-autocomplete-field
-        *ngFor="let num of firstGame; let i = index"
-        [number]="num"
-        [control]="data.column3[i]"
-        [options]="names">
-      </app-autocomplete-field>
+      @for (num of firstGame; track $index; let i = $index) {
+        <app-autocomplete-field [number]="num" [control]="data.column3[i]" [options]="names"></app-autocomplete-field>
+      }
     </div>
   </div>
 </mat-card>

@@ -1,4 +1,5 @@
 mat-card {
+  width: 100%;
   margin: 20px;
   padding: 20px;
 }
@@ -6,16 +7,6 @@ mat-card {
 .center-card {
   display: flex;
   justify-content: center;
-  width: 100%;
-}
-
-mat-card {
-  width: 100%;
-}
-
-.center-header {
-  justify-content: center;
-  display: flex;
   width: 100%;
 }
 
@@ -38,10 +29,6 @@ mat-card {
 
 .header-field app-autocomplete-field {
   min-width: 200px;
-}
-
-.header-field .field-row {
-  gap: 0;
 }
 
 .header-field mat-form-field.small {
